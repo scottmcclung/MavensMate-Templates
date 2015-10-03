@@ -31,7 +31,34 @@ public class {{ api_name }} extends fflib_SObjectSelector
 
 	/*
 	 * For more examples see https://github.com/financialforcedev/fflib-apex-common-samplecode
+	 *
 	 * 
+	public List<{{ object_name }}> selectBySomethingElse(Set<Id> setIds)
+	{
+	  fflib_QueryFactory queryFactory = newQueryFactory();
+    String strQuery = queryFactory.setCondition('Id IN :setIds').
+                                   toSOQL();
+    return (List<{{ object_name }}>) Database.query(strQuery);
+	}
+
+	public List<{{ object_name }}> selectBySomethingElse(Set<Id> setIds)
+	{
+	  fflib_QueryFactory queryFactory = newQueryFactory();
+		
+		//add subselect values
+	  fflib_QueryFactory subSelectQueryFactory = new SObjectSelector().addQueryFactorySubselect(queryFactory);
+    
+		//add parent record fields (can use more than one)
+		new AccountsSelector().configureQueryFactoryFields(queryFactory, 'Account');
+		new UsersSelector().configureQueryFactoryFields(subSelectQueryFactory, 'User');
+
+    String strQuery = queryFactory.setCondition('Id IN :setIds AND IsActive = true').
+                                   toSOQL();
+    return (List<{{ object_name }}>) Database.query(strQuery);
+	}
+
+
+
 	public List<{{ object_name }}> selectBySomethingElse(List<String> somethings)
 	{
 		assertIsAccessible();
