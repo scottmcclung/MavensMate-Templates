@@ -38,6 +38,7 @@ public class {{ api_name }} extends DataFactory
   public override void incrementRecords(Integer i)
   {
     if(shouldNotIncrement) return;
+    //setField('Name','Customer Name ' + String.valueOf(i))
   }
 
 
@@ -66,7 +67,7 @@ public class {{ api_name }} extends DataFactory
 
 
   /**
-   * Return a list of the opportunity records
+   * Return a list of the {{ object_name }} records
    * @return SObject[]
    */
   public SObject[] get(Set<Id> setIds)
