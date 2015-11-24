@@ -1,7 +1,7 @@
 @isTest
-public class {{ class_name }} extends DataFactory 
+public class {{ api_name }} extends DataFactory 
 {
-  public {{ class_name }}() 
+  public {{ api_name }}() 
   {
     super();
   }
@@ -82,7 +82,7 @@ public class {{ class_name }} extends DataFactory
   @isTest public static void testCreatingOneRecord()
   {
     //test code here
-    {{ class_name }} factory = new {{ class_name }}();
+    {{ api_name }} factory = new {{ api_name }}();
     {{ object_name }}[] lstRecords = factory.save(1);
 
     system.assertEquals(1, lstRecords.size());
@@ -92,7 +92,7 @@ public class {{ class_name }} extends DataFactory
   @isTest public static void testCreatingBulkRecords()
   {
     //test code here
-    {{ class_name }} factory = new {{ class_name }}();
+    {{ api_name }} factory = new {{ api_name }}();
     {{ object_name }}[] lstRecords = factory.save(200);
 
     system.assertEquals(200, lstRecords.size());

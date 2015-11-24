@@ -98,7 +98,7 @@
             "author":"Scott McClung @scottmcclung",
             "params":[  
                 {  
-                    "name":"class_name",
+                    "name":"api_name",
                     "description":"Factory class name (typically singular)",
                     "default":"InvoiceFactory"
                 },
