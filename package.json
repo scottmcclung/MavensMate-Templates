@@ -98,7 +98,7 @@
             "author":"Scott McClung @scottmcclung",
             "params":[  
                 {  
-                    "name":"api_name",
+                    "name":"class_name",
                     "description":"Factory class name (typically singular)",
                     "default":"InvoiceFactory"
                 },
@@ -109,7 +109,7 @@
                 },
                 {  
                     "name":"selector_name",
-                    "description":"Name of the object's Selector class",
+                    "description":"Name of the Standard or Custom Object's Selector class",
                     "default":"InvoicesSelector"
                 }
             ]
